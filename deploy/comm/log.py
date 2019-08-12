@@ -6,7 +6,7 @@ import logging, os
 class Logger:
     def __init__(self, path, clever=logging.DEBUG, Flevel=logging.DEBUG):
         self.logger = logging.getLogger(path)
-        self.logger.setLevel(logging.DEBUG)
+        self.logger.setLevel(clever)
         log_format = logging.Formatter('[%(asctime)s] [%(levelname)s] %(message)s', '%Y-%m-%d %H:%M:%S')
         fh = logging.FileHandler(path)
         fh.setFormatter(log_format)
